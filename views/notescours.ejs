@@ -1,0 +1,40 @@
+<!--Fichier vue notes de cours-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<header>
+    <meta charset="utf-8" />
+    <title>Notes de cours</title>
+</header>
+
+<body>
+    <div class="nav">
+        <nav>
+            <p>Catégories | Codes de cours | <a href="/ajoutdocument/notesdecours">Ajouter</a> | <a href="/">Accueil</a></p>
+        </nav>
+    </div>
+
+    <h1>Notes de cours</h1>
+
+    <div class="doc">
+        <ul>
+            <% for(var i = 0; i < listNotescours.length; i++){ %>
+            <li>Titre : <%= listNotescours[i].n_title %></li>
+            <li>Code du cours : <%= listNotescours[i].code_cours %></li>
+            <li>Identification : <%= listNotescours[i].idstudent %></li>
+            <li>Description : <br><%= listNotescours[i].n_description %></li><br>
+            <% } %>
+        </ul>   
+    </div>
+    
+</body>
+
+<!--Il faut afficher les documents ajoutés sous la catégorie Notes de cours-->
+
+
+<footer>
+    <p>©Copyright</p>
+</footer>
+
+</html>

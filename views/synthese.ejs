@@ -1,0 +1,42 @@
+<!--Fichier vue synhtèses-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<header>
+    <meta charset="utf-8" />
+    <title>Synthèses</title>
+</header>
+
+<body>
+    <div class="nav">
+        <nav>
+            <p>Catégories | Codes de cours | <a href="/ajoutdocument/synthese">Ajouter</a> | <a href="/">Accueil</a></p>
+        </nav>
+    </div>
+
+    <h1>Synthèses</h1>
+
+    <div class="doc">
+        <ul>
+            <% for(var i = 0; i < listSynthese.length; i++){ %>
+            <li>Titre : <%= listSynthese[i].s_title %></li>
+            <li>Code du cours : <%= listSynthese[i].code_cours %></li>
+            <li>Identification : <%= listSynthese[i].idstudent %></li>
+            <li>Description : <br><%= listSynthese[i].s_description %></li><br>
+            <% } %>
+        </ul>   
+    </div>
+
+  
+</body>
+
+
+<!--Il faut afficher les documents ajoutés sous la catégorie Synthèses-->
+
+
+<footer>
+    <p>©Copyright</p>
+</footer>
+
+</html>

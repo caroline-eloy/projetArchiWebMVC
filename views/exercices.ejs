@@ -1,0 +1,39 @@
+<!--Fichier vue exercices-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<header>
+    <meta charset="utf-8" />
+    <title>Exercices</title>
+</header>
+
+<body>
+    <div class="nav">
+        <nav>
+            <p>Catégories | Codes de cours | <a href="/ajoutdocument/exercices">Ajouter</a> | <a href="/">Accueil</a></p>
+        </nav>
+    </div>
+
+    <h1>Exercices</h1>
+
+    <div class="doc">
+        <ul>
+            <% for(var i = 0; i < listExercices.length; i++){ %>
+            <li>Titre : <%= listExercices[i].n_title %></li>
+            <li>Code du cours : <%= listExercices[i].code_cours %></li>
+            <li>Identification : <%= listExercices[i].idstudent %></li>
+            <li>Description : <br><%= listExercices[i].n_description %></li><br>
+            <% } %>
+        </ul>   
+    </div>
+
+</body>
+
+<!--Il faut afficher les documents ajoutés sous la catégorie Exercices-->
+
+<footer>
+    <p>©Copyright</p>
+</footer>
+
+</html>

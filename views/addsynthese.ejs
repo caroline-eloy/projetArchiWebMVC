@@ -1,0 +1,42 @@
+<!--Page ajout de synthèse-->
+<!DOCTYPE html>
+<html lang="fr">
+
+<header>
+    <meta charset="utf-8" />
+    <title>Ajout d'une synthèse</title>
+</header>
+
+<body>
+    <div class="nav">
+        <nav>
+            <p>Catégories | Codes de cours | <a href="/">Accueil</a> | <a href="/accueil/ajoutdocument">Retour</a></p>
+        </nav>
+    </div>
+
+    <h1>Ajouter une synthèse</h1>
+
+    <div class="ajoutdoc">
+        <form method="POST">
+            <label for="title">Titre :</label>
+            <input id="title" type="text" name="s_title" value=""><br>
+            <label for="codecours">Code de cours :</label>
+            <input id="codecours" type="text" name="code_cours" value=""><br>
+            <label for="identificationstudent">Identification :</label>
+            <input id="identificationstudent" type="numbers" name="idstudent" value=""><br>
+            <label for="description">Description :</label>
+            <textarea name="s_description" id="description"></textarea><br>
+            <!--<label for="documentPDF">Ajouter un fichier PDF :</label>
+            <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"><br>
+            -->
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+
+<footer>
+    <p>©Copyright</p>
+</footer>
+
+</html>
