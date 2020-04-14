@@ -1,9 +1,9 @@
 class Exercices {
-    constructor(titre, codecours, identification, description){
-        this.titre = titre;
-        this.codecours = codecours;
-        this.identification = identification;
-        this.description = description;
+    constructor(e_tite, code_cours, idstudent, e_description){
+        this.e_title = e_title;
+        this.code_cours = code_cours;
+        this.idstudent = idstudent;
+        this.e_description = e_description;
     }
 }
 

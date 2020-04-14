@@ -26,7 +26,7 @@ exports.exercices = function(req, res){
     };
     //Route ajout d'exercices
     exports.ajoutexercices = function(req,res){
-        let exercices = new Exercices(req.body.titre, req.body.codecours, req.body.identification, req.body.description);
+        let exercices = new Exercices(req.body.e_title, req.body.code_cours, req.body.idstudent, req.body.e_description);
         console.log(exercices);
         connection.query('INSERT INTO exercices set ?', exercices, (err,data)=>{
             if(err){

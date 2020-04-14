@@ -40,3 +40,5 @@ exports.synthese = function(req, res){
     }
         
 //Supprimer un élément de la liste des synthèses
+
+//DELETE FROM `db_projetarchi`.`synthese` WHERE (`idsynthese` = '3');
