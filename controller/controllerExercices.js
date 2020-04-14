@@ -41,3 +41,15 @@ exports.exercices = function(req, res){
 
 //Supprimer un élément de la liste des exercices
 
+exports.suppexercice = function (req, res) {
+    let sql = "DELETE FROM 'exercices' WHERE 'exercices'.'idexercices' = ?";
+    connection.query(sql, [req.params.idexercices], function (err, data) {
+        if(err) {
+            res.status(400).send(err);
+        }
+        else {
+            console.log("Exercice supprimé");
+            res.redirect('/accueil/exercices');
+        }
+    });
+};

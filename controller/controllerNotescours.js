@@ -41,3 +41,16 @@ exports.notesdecours = function(req, res){
     };
             
 //Supprimer un élément de la liste des notes de cours
+
+exports.suppnotescours = function (req, res) {
+    let sql = "DELETE FROM 'notescours' WHERE 'notescours'.'idnotescours' = ?";
+    connection.query(sql, [req.params.idnotescours], function (err, data) {
+        if(err) {
+            res.status(400).send(err);
+        }
+        else {
+            console.log("Notes de cours supprimé");
+            res.redirect('/accueil/notesdecours');
+        }
+    });
+};

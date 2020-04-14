@@ -22,6 +22,8 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/ajoutdocument/synthese', controllerSynthese.formulairesyntheses);
         //Ajout d'une synthèse
         router.post('/ajoutdocument/synthese', controllerSynthese.ajoutsynthese);
+        //Supprimer une synthese
+        router.get('/accueil/synthese/supprimer/:idsynthese', controllerSynthese.suppsynthese);
         
     
     // --------------> Routes des EXERCICES <--------------
@@ -34,6 +36,8 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/accueil/exercices', controllerExercices.exercices);
         //Affichage des exercices
         router.post('/accueil/exercices', controllerExercices.exercices);
+        //Supprimer un exercice
+        router.get('/accueil/exercices/supprimer/:idexercices', controllerExercices.suppexercice);
 
         
         
@@ -47,5 +51,7 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/ajoutdocument/notesdecours', controllerNotescours.formulairenotescours);
         //Affichage d'ajout de notes de cours
         router.post('/ajoutdocument/notesdecours', controllerNotescours.ajoutnotescours);
+        //Supprimer des notes de cours
+        router.get('/accueil/notesdecours/supprimer/:idnotescours', controllerNotescours.suppnotescours);
         
 module.exports = router;
