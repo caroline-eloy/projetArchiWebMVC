@@ -27,7 +27,7 @@ exports.notesdecours = function(req, res){
 
     // route ajout de note de cours
     exports.ajoutnotescours = function(req,res){
-        let notesdecours = new NotesCours(req.body.n_title, req.body.codecours, req.body.identificationstudent, req.body.n_description);
+        let notesdecours = new NotesCours(req.body.n_title, req.body.code_cours, req.body.idstudent, req.body.n_description);
         console.log(notesdecours);
         connection.query('INSERT INTO notescours SET ?', notesdecours, (err,data)=>{
             if(err){

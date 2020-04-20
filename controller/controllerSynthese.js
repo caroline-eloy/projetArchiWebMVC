@@ -27,7 +27,6 @@ exports.synthese = function(req, res){
     //route ajout de synthese
     exports.ajoutsynthese = function(req,res){
         let synthese = new Synthese(req.body.s_title, req.body.code_cours, req.body.idstudent, req.body.s_description);
-        //let synthese = new Synthese(s_title, code_cours, idstudent, s_description);
         console.log(synthese);
         connection.query('INSERT INTO synthese SET ?',synthese,(err,data)=>{
             if(err){

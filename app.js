@@ -3,20 +3,22 @@
 //call express
 let express = require('express');
 
+
 //app va use express
 let app = express();
-
-//appel BDD
-let sql = require ('./db.js');
-
-//importe les routes
-let routes = require('./newRoutes.js');
-app.use('/', routes);
 
 //pour les POST request
 let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+//appel BDD
+let sql = require ('./db.js');
+
+//importe les routes
+let routes = require('./routes.js');
+app.use('/', routes);
+
 
 //Verification du port
 let port = process.env.PORT || 8080;
