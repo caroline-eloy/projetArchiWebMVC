@@ -42,10 +42,11 @@ exports.synthese = function(req, res){
 //Supprimer un élément de la liste des synthèses
 
 exports.suppsynthese = function (req, res) {
-    let sql = "DELETE FROM 'synthese' WHERE 'synthese'.'idsynthese' = ?";
+    let sql = "DELETE FROM synthese WHERE synthese.idsynthese = ?";
     connection.query(sql, [req.params.idsynthese], function (err, data) {
         if(err) {
             res.status(400).send(err);
+            console.log('Erreur supp Synthèse');
         }
         else {
             console.log("Synthese supprimée");

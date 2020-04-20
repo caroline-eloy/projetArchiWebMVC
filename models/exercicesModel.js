@@ -1,6 +1,5 @@
 class Exercices {
-    constructor(idexercices, e_tite, code_cours, idstudent, e_description){
-        this.idexercices = idexercices;
+    constructor(e_title, code_cours, idstudent, e_description){
         this.e_title = e_title;
         this.code_cours = code_cours;
         this.idstudent = idstudent;
