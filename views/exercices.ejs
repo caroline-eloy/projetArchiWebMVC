@@ -24,6 +24,7 @@
             <li>Code du cours : <%= listExercices[i].code_cours %></li>
             <li>Identification : <%= listExercices[i].idstudent %></li>
             <li>Description : <br><%= listExercices[i].e_description %></li><br>
+            <a href="/accueil/exercices/modifier/<%= listExercices[i]. idexercices%>"> [Modifier] </a>
             <a href="/accueil/exercices/supprimer/<%= listExercices[i]. idexercices%>">[Supprimer]</a>
             <% } %>
         </ul>   
