@@ -30,6 +30,9 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/ajoutdocument/synthese', controllerSynthese.formulairesyntheses);
         //Ajout d'une synthèse
         router.post('/ajoutdocument/synthese', controllerSynthese.ajoutsynthese);
+        //Modifier une synthèse
+        router.get('/accueil/synthese/modifier/:idsynthese', controllerSynthese.formulaireupdatesynthese);
+        router.post('/accueil/synthese/modifier/', controllerSynthese.updatesynthese);
         //Supprimer une synthese
         router.get('/accueil/synthese/supprimer/:idsynthese', controllerSynthese.suppsynthese);
         
@@ -40,6 +43,8 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/api/accueil/synthese', controllerApiSynthese.synthese);
         //Ajout d'une synthèse
         router.post('/api/accueil/synthese', controllerApiSynthese.ajoutsynthese);
+        //Modifier une synthèse
+        router.put('/api/accueil/synthese/:idsynthese', controllerApiSynthese.updatesynthese);
         //Supprimer une synthèse
         router.delete('/api/accueil/synthese/:idsynthese', controllerApiSynthese.suppsynthese);
 
@@ -55,7 +60,7 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.post('/accueil/exercices', controllerExercices.exercices);
         //Modifier un exercices
         router.get('/accueil/exercices/modifier/:idexercices', controllerExercices.formulaireupdateexercice);
-        router.post('/accueil/exercices/modifier', controllerExercices.updateexercice);
+        router.post('/accueil/exercices/modifier/', controllerExercices.updateexercice);
         //Supprimer un exercice
         router.get('/accueil/exercices/supprimer/:idexercices', controllerExercices.suppexercice);
 
@@ -65,6 +70,8 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/api/accueil/exercices', controllerApiExercices.exercices);
         //Ajout d'un exercice
         router.post('/api/accueil/exercices', controllerApiExercices.ajoutexercices);
+        //Modifier un exercice
+        router.put('/api/accueil/exercices/:idexercices', controllerApiExercices.updateexercice);
         //Supprimer un exercice
         router.delete('/api/accueil/exercices/:idexercices', controllerApiExercices.suppexercice);
 
@@ -78,6 +85,9 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/ajoutdocument/notesdecours', controllerNotescours.formulairenotescours);
         //Affichage d'ajout de notes de cours
         router.post('/ajoutdocument/notesdecours', controllerNotescours.ajoutnotescours);
+        //Modifier une note de cours
+        router.get('/accueil/notesdecours/modifier/:idnotescours', controllerNotescours.formulaireupdatenotesdecours);
+        router.post('/accueil/notesdecours/modifier/', controllerNotescours.updatenotesdecours);
         //Supprimer des notes de cours
         router.get('/accueil/notesdecours/supprimer/:idnotescours', controllerNotescours.suppnotescours);
       
@@ -87,6 +97,8 @@ router.get('/accueil/ajoutdocument', controllerAccueil.ajoutdocument); //page aj
         router.get('/api/accueil/notesdecours', controllerApiNotescours.notesdecours);
         //Ajout d'une note de cours
         router.post('/api/accueil/notesdecours', controllerApiNotescours.ajoutnotescours);
+        //Modifier une note de cours
+        router.put('/api/accueil/notesdecours/:idnotescours', controllerApiNotescours.updatenotesdecours);
         //Supprimer une note de cours
         router.delete('/api/accueil/notesdecours/:idnotescours', controllerApiNotescours.suppnotescours);
 

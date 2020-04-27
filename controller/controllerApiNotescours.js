@@ -34,7 +34,24 @@ exports.ajoutnotescours = function(req,res){
         }
     });
 };
-            
+
+//Modifier un élément de la liste des notes de cours
+    
+exports.updatenotesdecours = function (req, res) {
+    let notesdecours = new NotesCours(req.params.n_title, req.params.code_cours, req.params.idstudent, req.params.n_description);
+    console.log(notesdecours);
+    connection.query("UPDATE notescours SET ? WHERE notescours.idnotescours = ?",
+    [notesdecours, req.params.idnotescours], function (error, data) {
+        if (error) {
+            console.log(error);
+            res.status(400).json({'message' : erreur});
+        } else {
+            res.status(200).json({'message': 'suppression réussie'});
+        }
+    })
+};
+
+
 //Supprimer un élément de la liste des notes de cours
 
 exports.suppnotescours = function (req, res) {

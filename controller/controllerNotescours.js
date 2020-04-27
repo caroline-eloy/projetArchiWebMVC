@@ -39,7 +39,45 @@ exports.notesdecours = function(req, res){
             }
         })
     };
-            
+
+//Modifier un élément de la liste des notes de cours
+    //Formulaire de modification
+    exports.formulaireupdatenotesdecours = function(req, res){
+        console.log('renvoi formulaire');
+        let idnotescours = req.params.idnotescours;
+        let sql = "Select * from notescours WHERE notescours.`idnotescours` = ? ";
+        connection.query(sql, idnotescours, function (err, data)  {
+            if(err){
+                res.status(400).send(err);
+                console.log('erreur niveau formulaire modification')
+            }
+            else{
+                res.status(202);
+                console.log(data);
+                notescours = data;
+                res.render('updatenotesdecours.ejs',
+                    { idnotescours: notescours[0].idnotescours, n_title: notescours[0].n_title, code_cours: notescours[0].code_cours, idstudent: notescours[0].idstudent, n_description: notescours[0].n_description });
+            }
+        });
+    };
+
+    //Route update
+    exports.updatenotesdecours = function (req, res) {
+        let notesdecours = new NotesCours(req.body.n_title, req.body.code_cours, req.body.idstudent, req.body.n_description);
+        console.log(notesdecours);
+        connection.query("UPDATE notescours SET ? WHERE notescours.idnotescours = ?",
+        [notesdecours, req.body.idnotescours], function (error, data) {
+            if (error) {
+                console.log(error);
+                res.status(400).send(error);
+            } else {
+                res.status(202).redirect('/accueil/notesdecours');
+            }
+        })
+    };
+
+
+
 //Supprimer un élément de la liste des notes de cours
 
 exports.suppnotescours = function (req, res) {
