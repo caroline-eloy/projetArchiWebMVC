@@ -40,39 +40,42 @@ exports.exercices = function(req, res){
     };
 
 //Modifier un élément de la liste des exercices 
-//Formulaire de modification
-exports.formulaireupdateexercice = function(req, res){
-    console.log('renvoi formulaire');
-    connection.query('SELECT * FROM exercices WHERE idexercices = ?', req.body.idexerices, function(err, data){
-        if(err){
-            res.status(400).send(err);
-            console.log('erreur niveau formulaire modification')
-        }
-        else{
-            res.status(202);
-            console.log(data);
-            res.render('updateexercice.ejs', {listExercices:data});
-        }
-    });
-};
+    //Formulaire de modification
+    exports.formulaireupdateexercice = function(req, res){
+        console.log('renvoi formulaire');
+        let idexercices = req.params.idexercices;
+        let sql = "SELECT * FROM exercices WHERE exercices.idexercices = ?";
+        connection.query(sql, idexercices, function(err, data){
+            if(err){
+                res.status(400).send(err);
+                console.log('erreur niveau formulaire modification')
+            }
+            else{
+                res.status(202);
+                console.log(data);
+                res.render('updateexercice.ejs', {listExercices:data});
+            }
+        });
+    };
 
 
-//Route update
-exports.updateexercice = function (req, res) {
-    let sql = 'UPDATE exercices SET ? WHERE exercices.idexercices = ?';
-    connection.query(sql, [req.params.idexercices], function(err, data){
-        if(err) {
-            console.log('Erreur modification exercice');
-            res.status(400).send(err);
-        }
-        else{
-            res.status(202);
-            console.log('Modification exercice réussie');
-            console.log(data);
-            res.redirect('/accueil/exercices');
-        };
-    });        
-};
+    //Route update
+    exports.updateexercice = function (req, res) {
+        let exercices = new Exercices(req.body.e_title, req.body.code_cours, req.body.idstudent, req.body.e_description);
+        let sql = "UPDATE exercices SET ? WHERE exercices.idexercices = ?";
+        connection.query(sql, exercices, function(err, data){
+            if(err) {
+                console.log('Erreur modification exercice');
+                res.status(400).send(err);
+            }
+            else{
+                res.status(202);
+                console.log('Modification exercice réussie');
+                console.log(data);
+                res.redirect('/accueil/exercices');
+            };
+        });        
+    };
 
 
 //Supprimer un élément de la liste des exercices
