@@ -26,7 +26,7 @@ exports.ajoutsynthese = function(req,res){
     console.log(synthese);
     connection.query('INSERT INTO synthese SET ?',synthese,(err,data)=>{
         if(err){
-            res.status(400).json({'message': erreur});
+            res.status(400).json({'message': 'erreur'});
         } 
         else{
             console.log('Ajout réussi');
@@ -44,9 +44,9 @@ exports.updatesynthese = function (req, res) {
     [synthese, req.params.idsynthese], function (error, data) {
         if (error) {
             console.log(error);
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } else {
-            res.status(200).json({'message': 'suppression réussie'});
+            res.status(200).json({'message': 'modification réussie'});
         }
     })
 };
@@ -57,7 +57,7 @@ exports.suppsynthese = function (req, res) {
     let sql = "DELETE FROM synthese WHERE synthese.idsynthese = ?";
     connection.query(sql, [req.params.idsynthese], function (err, data) {
         if(err) {
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
             console.log('Erreur supp Synthèse');
         }
         else {

@@ -9,7 +9,7 @@ listNotescours = [];
 exports.notesdecours = function(req, res){
     connection.query('SELECT * FROM notescours',(err,data)=>{
         if(err){
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } 
         else{
             res.status(200);
@@ -26,7 +26,7 @@ exports.ajoutnotescours = function(req,res){
     console.log(notesdecours);
     connection.query('INSERT INTO notescours SET ?', notesdecours, (err,data)=>{
         if(err){
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } 
         else{
             console.log('Ajout réussi');
@@ -44,9 +44,9 @@ exports.updatenotesdecours = function (req, res) {
     [notesdecours, req.params.idnotescours], function (error, data) {
         if (error) {
             console.log(error);
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } else {
-            res.status(200).json({'message': 'suppression réussie'});
+            res.status(200).json({'message': 'modification réussie'});
         }
     })
 };
@@ -58,7 +58,7 @@ exports.suppnotescours = function (req, res) {
     let sql = "DELETE FROM notescours WHERE notescours.idnotescours = ?";
     connection.query(sql, [req.params.idnotescours], function (err, data) {
         if(err) {
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
             console.log('Erreur supp Notes de cours');
         }
         else {

@@ -9,7 +9,7 @@ listExercices = [];
 exports.exercices = function(req, res){
     connection.query('SELECT * FROM exercices',(err,data)=>{
         if(err){
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } 
         else{
             res.status(200);
@@ -26,7 +26,7 @@ exports.ajoutexercices = function(req,res){
     console.log(exercices);
     connection.query('INSERT INTO exercices set ?', exercices, (err,data)=>{
         if(err){
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } 
         else{
             console.log('Ajout réussi');
@@ -44,9 +44,9 @@ exports.updateexercice = function (req, res) {
       [exercices, req.params.idexercices], function (error, data) {
         if (error) {
             console.log(error);
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
         } else {
-            res.status(200).json({'message': 'suppression réussie'});
+            res.status(200).json({'message': 'modification réussie'});
         }
     })
 };
@@ -58,7 +58,7 @@ exports.suppexercice = function (req, res) {
     let sql = "DELETE FROM exercices WHERE exercices.idexercices = ?";
     connection.query(sql, [req.params.idexercices], function (err, data) {
         if(err) {
-            res.status(400).json({'message' : erreur});
+            res.status(400).json({'message' : 'erreur'});
             console.log('Erreur supp Exercices');
         }
         else {
