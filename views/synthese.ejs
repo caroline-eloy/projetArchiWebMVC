@@ -11,7 +11,7 @@
 <body>
     <div class="nav">
         <nav>
-            <p>Catégories | Codes de cours | <a href="/ajoutdocument/synthese">Ajouter</a> | <a href="/">Accueil</a></p>
+            <p><a href="/">Accueil</a> | <a href="/accueil/notesdecours">Notes de cours</a> | <a href="/accueil/exercices">Exercices</a> | <a href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
         </nav>
     </div>
 
@@ -23,15 +23,17 @@
             <li>Titre : <%= listSynthese[i].s_title %></li>
             <li>Code du cours : <%= listSynthese[i].code_cours %></li>
             <li>Identification : <%= listSynthese[i].idstudent %></li>
-            <li>Description : <br><%= listSynthese[i].s_description %></li><br>
+            <li>Description : <br><%= listSynthese[i].s_description %></li></br>
+            <li><a href="fichier.pdf" dowload>Télécharger le fichier PDF</a></li><br>
             <a href="/accueil/synthese/modifier/<%= listSynthese[i]. idsynthese%>"> [Modifier] </a>
-            <a href="/accueil/synthese/supprimer/<%= listSynthese[i]. idsynthese%>">[Supprimer]</a>
+            <a href="/accueil/synthese/supprimer/<%= listSynthese[i]. idsynthese%>">[Supprimer]</a></br>
             <% } %>
-             
         </ul>   
     </div>
 
   
+    <div class="boutonajoutdoc"></div><a href="/ajoutdocument/synthese">Ajouter une synthèse</a>
+    
 </body>
 
 

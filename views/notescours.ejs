@@ -11,11 +11,13 @@
 <body>
     <div class="nav">
         <nav>
-            <p>Catégories | Codes de cours | <a href="/ajoutdocument/notesdecours">Ajouter</a> | <a href="/">Accueil</a></p>
+            <p><a href="/">Accueil</a> | <a href="/accueil/synthese">Synthèses</a> | <a href="/accueil/exercices">Exercices</a> | <a href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
         </nav>
     </div>
 
     <h1>Notes de cours</h1>
+
+    
 
     <div class="doc">
         <ul>
@@ -23,13 +25,17 @@
             <li>Titre : <%= listNotescours[i].n_title %></li>
             <li>Code du cours : <%= listNotescours[i].code_cours %></li>
             <li>Identification : <%= listNotescours[i].idstudent %></li>
-            <li>Description : <br><%= listNotescours[i].n_description %></li><br>
+            <li>Description : <br><%= listNotescours[i].n_description %></li></br>
+            <li><a href="fichier.pdf" dowload>Télécharger le fichier PDF<a></li></br>
             <a href="/accueil/notesdecours/modifier/<%= listNotescours[i]. idnotescours%>"> [Modifier] </a>
-            <a href="/accueil/notesdecours/supprimer/<%= listNotescours[i]. idnotescours%>">[Supprimer]</a>
+            <a href="/accueil/notesdecours/supprimer/<%= listNotescours[i]. idnotescours%>">[Supprimer]</a></br>
             <% } %>
-        </ul>   
+        </ul>
     </div>
     
+
+    <div class="boutonajoutdoc"></div><a href="/ajoutdocument/notesdecours">Ajouter une note de cours</a>
+
 </body>
 
 <!--Il faut afficher les documents ajoutés sous la catégorie Notes de cours-->
