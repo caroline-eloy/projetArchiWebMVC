@@ -14,7 +14,7 @@
     <header>
         <div class="nav">
             <nav>
-                <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/synthese">Toutes les synthèses</a> | <a class="liennav" href="/accueil/notesdecours">Toutes les notes de cours</a> | <a class="liennav" href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
+                <p><a class="liennav" href="/" tabindex="1">Accueil</a> | <a class="liennav" href="/accueil/synthese" tabindex="2">Toutes les synthèses</a> | <a class="liennav" href="/accueil/notesdecours" tabindex="3">Toutes les notes de cours</a> | <a class="liennav" href="/accueil/ajoutdocument" tabindex="4">Ajouter un autre document</a></p>
             </nav>
         </div>
 
@@ -30,15 +30,15 @@
                 <li class="codecours">Code du cours : <%= listExercices[i].code_cours %></li></br>
                 <li><%= listExercices[i].e_description %></li></br>
                 <li><a class="boutondownload" href="fichier.pdf" dowload>Télécharger le fichier PDF</a></li></br>
-                <a class="boutons" href="/accueil/exercices/supprimer/<%= listExercices[i]. idexercices%>">Supprimer</a>
-                <a class="boutons" href="/accueil/exercices/modifier/<%= listExercices[i]. idexercices%>"> Modifier </a></br>
+                <a class="boutons" href="/accueil/exercices/supprimer/<%= listExercices[i]. idexercices%>" tabindex="5">Supprimer</a>
+                <a class="boutons" href="/accueil/exercices/modifier/<%= listExercices[i]. idexercices%>" tabindex="6"> Modifier </a></br>
                 </br>
                 <% } %>
             </ul>   
         </div>
 
         </br></br></br>
-        <div><a class="boutonajoutdoc" href="/ajoutdocument/exercices">Ajouter un exercice</a></div>
+        <div><a class="boutonajoutdoc" href="/ajoutdocument/exercices" tabindex="7">Ajouter un exercice</a></div>
         </br></br></br>
     </main> 
 </body>

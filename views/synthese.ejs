@@ -14,7 +14,7 @@
     <header>
         <div class="nav">
             <nav>
-                <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/notesdecours">Toutes les notes de cours</a> | <a class="liennav" href="/accueil/exercices">Tous les exercices</a> | <a class="liennav" href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
+                <p><a class="liennav" href="/" tabindex="1">Accueil</a> | <a class="liennav" href="/accueil/notesdecours" tabindex="2">Toutes les notes de cours</a> | <a class="liennav" href="/accueil/exercices" tabindex="3">Tous les exercices</a> | <a class="liennav" href="/accueil/ajoutdocument" tabindex="4">Ajouter un autre document</a></p>
             </nav>
         </div>
 
@@ -31,15 +31,15 @@
                 <li class="codecours">Code du cours : <%= listSynthese[i].code_cours %></li></br>
                 <li><%= listSynthese[i].s_description %></li></br>
                 <li><a class="boutondownload" href="fichier.pdf" dowload>Télécharger le fichier PDF</a></li><br>
-                <a class="boutons" href="/accueil/synthese/supprimer/<%= listSynthese[i]. idsynthese%>">Supprimer</a>
-                <a class="boutons" href="/accueil/synthese/modifier/<%= listSynthese[i]. idsynthese%>">Modifier</a></br>
+                <a class="boutons" href="/accueil/synthese/supprimer/<%= listSynthese[i]. idsynthese%>" tabindex="5">Supprimer</a>
+                <a class="boutons" href="/accueil/synthese/modifier/<%= listSynthese[i]. idsynthese%>" tabindex="6">Modifier</a></br>
                 </br>
                 <% } %>
             </ul>   
         </div>
 
         </br></br></br> 
-        <div><a class="boutonajoutdoc" href="/ajoutdocument/synthese">Ajouter une synthèse</a></div>
+        <div><a class="boutonajoutdoc" href="/ajoutdocument/synthese" tabindex="7">Ajouter une synthèse</a></div>
         </br></br></br> 
     </main>
 </body>
