@@ -3,40 +3,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<header>
+<head>
     <meta charset="utf-8" />
-    <title> Page d'accueil</title>
-</header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheet/accueil.css">
+    <title> BA | Page d'accueil</title>
+</head>
 
 
 <body>
+    <header>
+        <h1>Bienvenue sur l'application de la classe de Business Analyst</h1>
+        <p>Cette application est réservée aux élèves de première année en master de business
+            analyst. Il s'agit d'une application de partage basée sur l'entraide entre 
+            camarades de classe. </br>
+            Ci-dessous, vous pouvez consulter les documents postés, ou vous pouvez poster 
+            un document de la catégorie que vous souhaitez. 
+        </p>
+    </header>
 
-    <h1>Bienvenue sur l'application de la classe de Business Analyst</h1>
-    <p>Cette application est réservée aux élèves de première année en master de business
-        analyst. Il s'agit d'une application de partage basée sur l'entraide entre 
-        camarades de classe. 
-    </p>
-
-    <div class="liens">
-        <ul>
-            <li>
-                <a href="/accueil/notesdecours">Notes de cours</a>
-            </li>
-            <li>
-                <a href="/accueil/synthese">Synthèses</a>
-            </li>
-            <li>
-                <a href="/accueil/exercices">Exercices</a>
-            </li>
-            <li>
-                <a href="/accueil/ajoutdocument">Ajouter un document</a>
-            </li>
-        </ul>
-    </div>
+    <main>
+        <div class="liens">
+            <div id="liencours"><a class = lienaccueil href="/accueil/notesdecours">Notes de cours</a></div>
+            <div id="liensynthese"><a class = lienaccueil href="/accueil/synthese">Synthèses</a></div>
+            <div id="lienexo"><a class = lienaccueil href="/accueil/exercices">Exercices</a></div>
+            <div id="lienajout"><a class = lienaccueil href="/accueil/ajoutdocument">Ajouter un document</a></div>
+        </div>
+    </main>
 
 </body>
 
 <footer>
+    <p>Cette application a été créée par Caroline Eloy</p>
     <p>©Copyright</p>
 </footer>
 

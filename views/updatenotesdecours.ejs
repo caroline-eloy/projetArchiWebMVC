@@ -4,39 +4,43 @@
 
 <header>
     <meta charset="utf-8" />
-    <title>Modification de notes de cours</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheet/update.css">
+    <title>BA | Modifier une note de cours</title>
 </header>
 
 <body>
     <div class="nav">
         <nav>
-            <p>Catégories | Codes de cours | <a href="/">Accueil</a> | <a href="/accueil/ajoutdocument">Retour</a></p>
+            <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/notesdecours">Retour</a> | <a class="liennav" href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
         </nav>
     </div>
 
-    <h1>Modification des notes de cours</h1>
+    <h1>Modifier une note de cours</h1>
 
     <div class="formulaire">
         <form action="/accueil/notesdecours/modifier/" method="POST">
             <input id="idexercices" type="hidden" name="idnotescours" value="<%= idnotescours %>"></br>
             <label for="n_title">Titre :</label>
-            <input id="n_title" type="text" name="n_title" value="<%= n_title %>"><br>
+            <input id="n_title" type="text" name="n_title" value="<%= n_title %>" required=""><br>
             <label for="code_cours">Code de cours :</label>
-            <input id="code_cours" type="text" name="code_cours" value="<%= code_cours %>"><br>
+            <input id="code_cours" type="text" name="code_cours" value="<%= code_cours %>" required=""><br>
             <label for="idstudent">Identification :</label>
-            <input id="idstudent" type="numbers" name="idstudent" value="<%= idstudent %>"><br>
+            <input id="idstudent" type="numbers" name="idstudent" value="<%= idstudent %>" required=""><br>
             <label for="n_description">Description :</label>
             <textarea name="n_description" id="n_description" value="<%= n_description %>"></textarea><br>
             <label for="documentPDF">Ajouter un fichier PDF :</label>
             <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"><br>
 
-            <input type="submit">
+            <input type="submit" name="save" value="Sauver">
+            <a href="/accueil/notesdecours"> <input type="button" value="Retour"></a>
         </form>
     </div>
 
 </body>
 
 <footer>
+    <p>Cette application a été créée par Caroline Eloy</p>
     <p>©Copyright</p>
 </footer>
 

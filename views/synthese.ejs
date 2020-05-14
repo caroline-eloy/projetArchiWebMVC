@@ -3,44 +3,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<header>
+<head>
     <meta charset="utf-8" />
-    <title>Synthèses</title>
-</header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheet/document.css">
+    <title>BA | Les synthèses</title>
+</head>
 
 <body>
-    <div class="nav">
-        <nav>
-            <p><a href="/">Accueil</a> | <a href="/accueil/notesdecours">Notes de cours</a> | <a href="/accueil/exercices">Exercices</a> | <a href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
-        </nav>
-    </div>
+    <header>
+        <div class="nav">
+            <nav>
+                <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/notesdecours">Toutes les notes de cours</a> | <a class="liennav" href="/accueil/exercices">Tous les exercices</a> | <a class="liennav" href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
+            </nav>
+        </div>
 
-    <h1>Synthèses</h1>
+        <h1>Les synthèses</h1>
+        <p>Voici ci-dessous la liste des synthèses. Vous pouvez également ajouter une synthèse grâce au bouton en bas de la page.</p>
 
-    <div class="doc">
-        <ul>
-            <% for(var i = 0; i < listSynthese.length; i++){ %>
-            <li>Titre : <%= listSynthese[i].s_title %></li>
-            <li>Code du cours : <%= listSynthese[i].code_cours %></li>
-            <li>Identification : <%= listSynthese[i].idstudent %></li>
-            <li>Description : <br><%= listSynthese[i].s_description %></li></br>
-            <li><a href="fichier.pdf" dowload>Télécharger le fichier PDF</a></li><br>
-            <a href="/accueil/synthese/modifier/<%= listSynthese[i]. idsynthese%>"> [Modifier] </a>
-            <a href="/accueil/synthese/supprimer/<%= listSynthese[i]. idsynthese%>">[Supprimer]</a></br>
-            <% } %>
-        </ul>   
-    </div>
+    </header>
 
-  
-    <div class="boutonajoutdoc"></div><a href="/ajoutdocument/synthese">Ajouter une synthèse</a>
-    
+    <main>
+        <div class="doc">
+            <ul></br>
+                <% for(var i = 0; i < listSynthese.length; i++){ %>
+                <li class="titre"><%= listSynthese[i].s_title %></li>
+                <li class="codecours">Code du cours : <%= listSynthese[i].code_cours %></li></br>
+                <li><%= listSynthese[i].s_description %></li></br>
+                <li><a class="boutondownload" href="fichier.pdf" dowload>Télécharger le fichier PDF</a></li><br>
+                <a class="boutons" href="/accueil/synthese/supprimer/<%= listSynthese[i]. idsynthese%>">Supprimer</a>
+                <a class="boutons" href="/accueil/synthese/modifier/<%= listSynthese[i]. idsynthese%>">Modifier</a></br>
+                </br>
+                <% } %>
+            </ul>   
+        </div>
+
+        </br></br></br> 
+        <div><a class="boutonajoutdoc" href="/ajoutdocument/synthese">Ajouter une synthèse</a></div>
+        </br></br></br> 
+    </main>
 </body>
 
 
-<!--Il faut afficher les documents ajoutés sous la catégorie Synthèses-->
 
 
 <footer>
+    <p>Cette application a été créée par Caroline Eloy</p>
     <p>©Copyright</p>
 </footer>
 

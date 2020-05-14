@@ -4,13 +4,15 @@
 
 <header>
     <meta charset="utf-8" />
-    <title>Ajout d'une synthèse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../stylesheet/ajout.css">
+    <title> BA | Ajouter une synthèse</title>
 </header>
 
 <body>
     <div class="nav">
         <nav>
-            <p>Catégories | Codes de cours | <a href="/">Accueil</a> | <a href="/accueil/ajoutdocument">Retour</a></p>
+            <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/synthese">Toutes les synthèses</a> | <a class="liennav" href="/accueil/ajoutdocument">Retour</a></p>
         </nav>
     </div>
 
@@ -19,22 +21,24 @@
     <div class="ajoutdoc">
         <form method="POST">
             <label for="s_title">Titre :</label>
-            <input id="s_title" type="text" name="s_title" value=""><br>
+            <input id="s_title" type="text" name="s_title" value="" required=""></br>
             <label for="code_cours">Code de cours :</label>
-            <input id="code_cours" type="text" name="code_cours" value=""><br>
+            <input id="code_cours" type="text" name="code_cours" value="" required=""></br>
             <label for="idstudent">Identification :</label>
-            <input id="idstudent" type="numbers" name="idstudent" value=""><br>
+            <input id="idstudent" type="numbers" name="idstudent" value="" required=""></br>
             <label for="s_description">Description :</label>
-            <textarea name="s_description" id="s_description"></textarea><br>
+            <textarea name="s_description" id="s_description"></textarea></br>
             <label for="documentPDF">Ajouter un fichier PDF :</label>
-            <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"><br>
-            <input type="submit">
+            <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"></br></br>
+            </br>
+            <input type="submit" value="Ajouter une synthèse">
         </form>
     </div>
 
 </body>
 
 <footer>
+    <p>Cette application a été créée par Caroline Eloy</p>
     <p>©Copyright</p>
 </footer>
 

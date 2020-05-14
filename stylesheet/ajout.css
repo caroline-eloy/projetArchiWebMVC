@@ -1,0 +1,131 @@
+html
+{
+    max-width: 100%;
+    background-color: #F7FCFC;
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: justify;
+}
+
+header
+{
+    max-width: 100%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+h1
+{
+    color: #84898D;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.nav
+{
+    background-color: #84898D;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 1%;
+}
+
+a[class~="liennav"]
+{
+    font-size: 16px;
+    outline: none;
+    text-decoration: none;
+}
+
+a:link[class~="liennav"]
+{
+    color: #BADDDE;
+}
+
+a:hover[class~="liennav"]
+{
+    color: #BADDDE;
+    font-weight: bold;
+}
+
+a:visited[class~="liennav"]
+{
+    color: #BADDDE;
+}
+
+form
+{
+    background-color: #BADDDE;
+    justify-content: center;
+    padding: 40px 110px;
+    width: 35%;
+    margin-left: 24%;
+}
+
+.ajoutdoc
+{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 15px;
+}
+
+label
+{
+    text-align: left;
+    display: grid;
+    grid-row: 1fr;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+input[type=text], input[type=numbers], input[type=textarea]
+{
+    text-align: left;
+    font-size: 15px;
+    justify-content: center;
+    display: grid;
+    grid-row: 2fr;
+    width: 85%;
+
+}
+
+textarea
+{
+    vertical-align: baseline;
+    resize: none;
+    height: 4rem;
+    width: 85%;
+    font-size: 15px;
+}
+
+input[type=submit]
+{
+    float: right;
+    background-color: #84898D;
+    color: #F7FCFC;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    transition: 1s;
+}
+
+input[type=submit]:hover
+{
+    font-weight: bold;
+}
+
+footer
+{
+    background-color: #84898D;
+    font-size: 10px;
+    text-align: center;
+    padding: 1%;
+    position:absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+}
