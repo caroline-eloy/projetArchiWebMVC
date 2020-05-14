@@ -5,14 +5,14 @@
 <header>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheet/update.css">
+    <link rel="stylesheet" href="/stylesheet/update.css">
     <title>BA | Modifier une note de cours</title>
 </header>
 
 <body>
     <div class="nav">
         <nav>
-            <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/notesdecours">Retour</a> | <a class="liennav" href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
+            <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/notesdecours">Retour</a></p>
         </nav>
     </div>
 
@@ -32,8 +32,9 @@
             <label for="documentPDF">Ajouter un fichier PDF :</label>
             <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"><br>
 
+            <a href="/accueil/notesdecours"> <input type="submit" value="Retour"></a>
             <input type="submit" name="save" value="Sauver">
-            <a href="/accueil/notesdecours"> <input type="button" value="Retour"></a>
+            
         </form>
     </div>
 

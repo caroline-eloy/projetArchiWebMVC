@@ -56,6 +56,68 @@ a:visited[class~="liennav"]
     color: #BADDDE;
 }
 
+form
+{
+    background-color: #BADDDE;
+    justify-content: center;
+    padding: 40px 110px;
+    width: 35%;
+    margin-left: 24%;
+}
+
+.formulaire
+{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: 15px;
+}
+
+label
+{
+    text-align: left;
+    display: grid;
+    grid-row: 1fr;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+input[type=text], input[type=numbers], input[type=textarea]
+{
+    text-align: left;
+    font-size: 15px;
+    justify-content: center;
+    display: grid;
+    grid-row: 2fr;
+    width: 85%;
+
+}
+
+textarea
+{
+    vertical-align: baseline;
+    resize: none;
+    height: 4rem;
+    width: 85%;
+    font-size: 15px;
+}
+
+input[type=submit]
+{
+    float: right;
+    background-color: #84898D;
+    color: #F7FCFC;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+input[type=submit]:hover
+{
+    font-weight: bold;
+}
+
 footer
 {
     background-color: #84898D;

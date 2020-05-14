@@ -2,40 +2,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<header>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../stylesheet/update.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/update.css">
     <title>BA | Modifier un exercice</title>
-</header>
+</head>
 
 <body>
-    <div class="nav">
-        <nav>
-            <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/exercices">Retour</a> | <a class="liennav" href="/accueil/ajoutdocument">Ajouter un autre document</a></p>
-        </nav>
-    </div>
+    <header>
+        <div class="nav">
+            <nav>
+                <p><a class="liennav" href="/">Accueil</a> | <a class="liennav" href="/accueil/exercices">Retour</a></p>
+            </nav>
+        </div>
 
-    <h1>Modifier un exercice</h1>
+        <h1>Modifier un exercice</h1>
+    </header>
 
-    <div class="formulaire">
-        <form action="/accueil/exercices/modifier/" method="POST">
-            <input id="idexercices" type="hidden" name="idexercices" value="<%= idexercices %>"></br>
-            <label for="e_title">Titre :</label>
-            <input id="e_title" type="text" name="e_title" value="<%= e_title %>"><br>
-            <label for="code_cours">Code de cours :</label>
-            <input id="code_cours" type="text" name="code_cours" value="<%= code_cours %>"><br>
-            <label for="idstudent">Identification :</label>
-            <input id="idstudent" type="numbers" name="idstudent" value="<%= idstudent %>"><br>
-            <label for="e_description">Description :</label>
-            <textarea name="e_description" id="e_description" value="<%= e_description %>"></textarea><br>
-            <label for="documentPDF">Ajouter un fichier PDF :</label>
-            <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"><br>
-
-            <input type="submit" name="save" value="Sauver">
-            <a href="/accueil/exercices"> <input type="button" value="Retour"></a>
-        </form>
-    </div>
+   
+    <main>
+        <div class="formulaire">
+            <form action="/accueil/exercices/modifier/" method="POST">
+                <input id="idexercices" type="hidden" name="idexercices" value="<%= idexercices %>"></br>
+                <label for="e_title">Titre :</label>
+                <input id="e_title" type="text" name="e_title" value="<%= e_title %>"><br>
+                <label for="code_cours">Code de cours :</label>
+                <input id="code_cours" type="text" name="code_cours" value="<%= code_cours %>"><br>
+                <label for="idstudent">Identification :</label>
+                <input id="idstudent" type="numbers" name="idstudent" value="<%= idstudent %>"><br>
+                <label for="e_description">Description :</label>
+                <textarea name="e_description" id="e_description" value="<%= e_description %>"></textarea><br>
+                <label for="documentPDF">Ajouter un fichier PDF :</label>
+                <input type="file" id="fichierPDF" name="fichierPDF" accept=".pdf"><br>
+                
+                <a href="/accueil/exercices"> <input type="submit" value="Retour"></a>
+                <input type="submit" name="save" value="Sauver">
+                
+            </form>
+        </div>
+    </main>
 
 </body>
 
