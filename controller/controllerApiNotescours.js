@@ -38,10 +38,10 @@ exports.ajoutnotescours = function(req,res){
 //Modifier un élément de la liste des notes de cours
     
 exports.updatenotesdecours = function (req, res) {
-    let notesdecours = new NotesCours(req.params.n_title, req.params.code_cours, req.params.idstudent, req.params.n_description);
+    let notesdecours = new NotesCours(req.body.n_title, req.body.code_cours, req.body.idstudent, req.body.n_description);
     console.log(notesdecours);
     connection.query("UPDATE notescours SET ? WHERE notescours.idnotescours = ?",
-    [notesdecours, req.params.idnotescours], function (error, data) {
+    [notesdecours, req.body.idnotescours], function (error, data) {
         if (error) {
             console.log(error);
             res.status(400).json({'message' : 'erreur'});

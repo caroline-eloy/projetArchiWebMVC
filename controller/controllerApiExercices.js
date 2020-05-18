@@ -38,10 +38,10 @@ exports.ajoutexercices = function(req,res){
 //Modifier un élément de la liste des exercices 
 
 exports.updateexercice = function (req, res) {
-    let exercices = new Exercices(req.params.e_title, req.params.code_cours, req.params.idstudent, req.params.e_description);
+    let exercices = new Exercices(req.body.e_title, req.body.code_cours, req.body.idstudent, req.body.e_description);
     console.log(exercices);
     connection.query("UPDATE exercices SET ? WHERE exercices.idexercices = ?",
-      [exercices, req.params.idexercices], function (error, data) {
+      [exercices, req.body.idexercices], function (error, data) {
         if (error) {
             console.log(error);
             res.status(400).json({'message' : 'erreur'});

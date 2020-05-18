@@ -38,10 +38,10 @@ exports.ajoutsynthese = function(req,res){
 //Modifier un élément de la liste des synthèses
 
 exports.updatesynthese = function (req, res) {
-    let synthese = new Synthese(req.params.s_title, req.params.code_cours, req.params.idstudent, req.params.s_description);
+    let synthese = new Synthese(req.body.s_title, req.body.code_cours, req.body.idstudent, req.body.s_description);
     console.log(synthese);
     connection.query("UPDATE synthese SET ? WHERE synthese.idsynthese = ?",
-    [synthese, req.params.idsynthese], function (error, data) {
+    [synthese, req.body.idsynthese], function (error, data) {
         if (error) {
             console.log(error);
             res.status(400).json({'message' : 'erreur'});
